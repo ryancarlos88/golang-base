@@ -17,3 +17,11 @@ type DeleteCustomerUsecaseRepository interface {
 type UpdateCustomerUsecaseRepository interface {
 	Update(ctx context.Context, customer entity.Customer) error
 }
+
+type ListCustomerUsecaseRepository interface {
+	List(ctx context.Context) ([]entity.Customer, error)
+}
+
+type ReadCustomerUsecaseRepository interface {
+	Read(ctx context.Context, customerID string) (entity.Customer, error)
+}
