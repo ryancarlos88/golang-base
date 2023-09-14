@@ -26,3 +26,29 @@ func (r *CustomerRepository) Update(ctx context.Context, customer entity.Custome
 func (r *CustomerRepository) Delete(ctx context.Context, customerID string) error {
 	return nil
 }
+
+func (r *CustomerRepository) Read(ctx context.Context, customerID string) (*entity.Customer, error) {
+	return &entity.Customer{
+		ID: customerID,
+		Name: "to be implemented",
+		Phone: "to be implemented",
+		Email: "to be implemented",
+	}, nil
+}
+
+func (r *CustomerRepository) List(ctx context.Context, pageNumber, pageSize int) ([]entity.Customer, error) {
+	return []entity.Customer{
+		{
+			ID: "123", 
+			Name: "to be implemented", 
+			Phone: "to be implemented", 
+			Email: "to be implemented",
+		},
+		{
+			ID: "456", 
+			Name: "to be implemented", 
+			Phone: "to be implemented", 
+			Email: "to be implemented",
+		},
+	}, nil
+}

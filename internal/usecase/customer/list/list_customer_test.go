@@ -15,7 +15,7 @@ type customerRepoMock struct {
 	returnsErr  error
 }
 
-func (m *customerRepoMock) List(context.Context) ([]entity.Customer, error) {
+func (m *customerRepoMock) List(_ context.Context, _, _ int) ([]entity.Customer, error) {
 	return m.returnsList, m.returnsErr
 }
 

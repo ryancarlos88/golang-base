@@ -20,7 +20,7 @@ func NewListCustomerUsecase(repo customer.ListCustomerUsecaseRepository) *ListCu
 var ErrListingCustomers = errors.New("error listing customers")
 
 func (u *ListCustomersUsecase) Execute(ctx context.Context, input dto.ListCustomersInput) ([]dto.ListCustomersOutput, error) {
-	res, err := u.repo.List(ctx)
+	res, err := u.repo.List(ctx, input.PageNumber, input.PageSize)
 	if err != nil {
 		return nil, fmt.Errorf("[%w]: %v", ErrListingCustomers, err)
 	}

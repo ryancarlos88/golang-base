@@ -1,3 +1,5 @@
 package dto
 
-type ListCustomersInput struct {}
+type ListCustomersInput struct {
+	PageNumber, PageSize int
+}
